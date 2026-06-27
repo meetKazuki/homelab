@@ -1,0 +1,34 @@
+# Secrets — never commit unencrypted
+*.env
+!*.enc.env
+*.key
+!*.enc.*
+.env
+.env.*
+
+# SOPS / age — the private key must NEVER be in this repo
+*.agekey
+age-keys.txt
+keys.txt
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Ansible (Sprint 3+)
+*.retry
+.vault_pass
+
+# OpenTofu / Terraform (Sprint 7+, conditional)
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+.terraform.lock.hcl
+
+# Local scratch
+/scratch/
+/tmp/
