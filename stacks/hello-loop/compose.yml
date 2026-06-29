@@ -1,0 +1,13 @@
+name: hello-loop
+
+services:
+  web:
+    image: nginx:alpine
+    container_name: hello-loop-web
+    restart: unless-stopped
+    ports:
+      - "8089:80"
+    environment:
+      - MESSAGE=hello from git, iteration 1
+    command: >
+      sh -c "echo '<h1>$$MESSAGE</h1>' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"
